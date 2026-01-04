@@ -43,3 +43,20 @@ user_filesystem/
 ├── charlie/
 │   └── procs
 ```
+
+## Technologies Used
+
+- **Bash / Shell scripting**
+- Standard Linux utilities (`who`, `ps`, `awk`, `grep`, etc.)
+- Linux filesystem operations
+
+---
+
+## Features
+
+- Detects active and inactive users automatically
+- Periodically updates user process information
+- Preserves historical login data
+- No external dependencies required
+- Lightweight and easy to run on any Linux system
+
