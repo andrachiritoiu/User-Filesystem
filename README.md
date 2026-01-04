@@ -1,3 +1,45 @@
-# User Filesystem
+# User Filesystem Monitor
 
-  In this project, I implemented a shell script that monitors active users on a Linux system. The script creates a directory for each active user, containing a file named procs, which lists the user's currently running processes. The user information is updated periodically, and for users who are no longer active, the script creates an empty procs file and an additional file called lastlogin, which displays the date of the user's last session.
+## Overview
+
+This project implements a **Linux shell script** that monitors active users on a system and creates a filesystem-based representation of their activity.  
+For each user, the script maintains a dedicated directory containing information about running processes and login history.
+
+The project simulates a lightweight user monitoring system using standard Linux tools and filesystem operations.
+
+---
+
+## How It Works
+
+The script periodically scans the system for **currently active users** and performs the following actions:
+
+### 🔹 Active Users
+For each active user:
+- A directory is created (or updated) using the username
+- Inside the directory, a file named `procs` is generated
+- The `procs` file contains a list of all processes currently running under that user
+
+### 🔹 Inactive Users
+For users who are no longer active:
+- Their directory is preserved
+- The `procs` file is emptied
+- A new file named `lastlogin` is created
+- The `lastlogin` file stores the date and time of the user's last login session
+
+This approach allows tracking both **current activity** and **historical login information** using only filesystem data.
+
+---
+
+## Directory Structure Example
+
+```text
+user_filesystem/
+├── alice/
+│   ├── procs
+│   └── lastlogin
+├── bob/
+│   ├── procs
+│   └── lastlogin
+├── charlie/
+│   └── procs
+```
